@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ProfileOverlayProps {
   open: boolean;
   onClose: () => void;

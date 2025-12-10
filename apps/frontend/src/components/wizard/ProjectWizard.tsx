@@ -42,7 +42,6 @@ const ProjectWizard: React.FC<ProjectWizardProps> = ({ open, onClose }) => {
 
   const renderContent = () => {
     if (step === "method") {
-      // ✅ 카드 래퍼 제거: MethodScreen 쪽 카드 스타일만 사용
       return (
         <MethodScreen
           onSelect={handleSelectMethod}
@@ -56,7 +55,6 @@ const ProjectWizard: React.FC<ProjectWizardProps> = ({ open, onClose }) => {
         <AIDescribeScreen
           initialData={describeData || undefined}
           onBack={() => setStep("method")}
-          onCancel={handleExitWizard}
           onSubmit={(form) => {
             setDescribeData(form);
             setStep("result");

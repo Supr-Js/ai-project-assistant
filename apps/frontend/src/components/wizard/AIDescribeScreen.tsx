@@ -1,5 +1,5 @@
 // apps/frontend/src/components/wizard/AIDescribeScreen.tsx
-import React, { type FormEvent, useState } from "react";
+import { type FormEvent, useState } from "react";
 import aiFace from "../../assets/icons/ai-face.svg";
 import roadmapHero from "../../assets/images/roadmap-hero.png";
 import unionIcon from "../../assets/icons/union.svg";
@@ -24,7 +24,7 @@ export type DescribeFormData = {
 interface Props {
   initialData?: DescribeFormData;
   onBack: () => void;
-  onCancel: () => void;
+  // ❌ onCancel 제거
   onSubmit: (form: DescribeFormData) => void;
 }
 
@@ -104,8 +104,7 @@ const TOPIC_PRESETS: TopicPreset[] = [
 export default function AIDescribeScreen({
   initialData,
   onBack,
-  onCancel, // eslint-disable-line @typescript-eslint/no-unused-vars
-  onSubmit,
+  onSubmit, // ✅ onCancel 제거
 }: Props) {
   const [input, setInput] = useState(initialData?.input ?? "");
   const [tags, setTags] = useState<string[]>(initialData?.tags ?? []);
@@ -158,7 +157,7 @@ export default function AIDescribeScreen({
   const disabled = !canSubmit || loading;
 
   return (
-    // 중앙에 떠 있는 팝업 카드(예전 MethodScreen 느낌)
+    // 중앙에 떠 있는 팝업 카드
     <div
       style={{
         position: "relative",
@@ -297,7 +296,6 @@ export default function AIDescribeScreen({
                 프로젝트 설명
               </label>
 
-              {/* 입력창 : 밝은 하늘색 배경 */}
               <textarea
                 rows={6}
                 value={input}
@@ -317,7 +315,6 @@ export default function AIDescribeScreen({
                 placeholder="예) 나는 취업 준비 중인 개발자고, 6주 동안 MVP를 완성할 수 있는 웹 서비스 프로젝트를 진행하려고 해. 프론트/백엔드/디자인까지 팀을 꾸려 협업 경험과 포트폴리오를 만들고 싶어."
               />
 
-              {/* 글자 수 카운터 */}
               <div
                 style={{
                   marginTop: 4,
@@ -329,7 +326,6 @@ export default function AIDescribeScreen({
                 {input.trim().length}/500
               </div>
 
-              {/* 안내 문구 + 제출 버튼 */}
               <div
                 style={{
                   marginTop: 10,
@@ -398,7 +394,7 @@ export default function AIDescribeScreen({
           </form>
         </div>
 
-        {/* 오른쪽 Preview – 중앙 정렬 */}
+        {/* 오른쪽 Preview */}
         <div
           className="hidden md:flex"
           style={{ flexDirection: "column", alignItems: "center" }}

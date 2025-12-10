@@ -1,5 +1,5 @@
 // apps/frontend/src/components/RolePopup.tsx
-import React, { useState } from "react";
+import { useState } from "react";
 import aiFace from "../assets/icons/ai-face.svg";
 
 type Role = "design" | "dev" | "pm" | "lead";

@@ -1,4 +1,4 @@
-import React, { useState, type FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
 import { login, register } from '../lib/api';
 import sideweblogo from '../assets/sideweblogo.png';
 

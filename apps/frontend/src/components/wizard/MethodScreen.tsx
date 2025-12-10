@@ -1,5 +1,4 @@
 // apps/frontend/src/components/wizard/MethodScreen.tsx
-import React from "react";
 import frameIcon from "../../assets/icons/frame.svg";
 import stepsIcon from "../../assets/icons/bar-chart-steps.svg";
 import aiFace from "../../assets/icons/ai-face.svg";

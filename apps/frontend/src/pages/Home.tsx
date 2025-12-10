@@ -1,5 +1,5 @@
 // apps/frontend/src/pages/Home.tsx
-import React, { useState } from "react";
+import { useState } from "react";
 import TopNav from "../components/TopNav";
 import RolePopup from "../components/RolePopup";
 import LoginForm from "../components/LoginForm";
